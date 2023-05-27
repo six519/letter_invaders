@@ -12,6 +12,7 @@ void Game::init()
     graphicDriver = DETECT;
     graphicMode = 0;
     initgraph(&graphicDriver, &graphicMode, BGI_PATH);
+    setbkcolor(BLUE);
 }
 
 void Game::cleanup()
