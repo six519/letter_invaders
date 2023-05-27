@@ -4,7 +4,8 @@
 
 Game::Game()
 {
-
+    state = 0;
+    gameEnd = 0;
 }
 
 void Game::init()
@@ -12,7 +13,11 @@ void Game::init()
     graphicDriver = DETECT;
     graphicMode = 0;
     initgraph(&graphicDriver, &graphicMode, BGI_PATH);
+    maxX = getmaxx();
+    maxY = getmaxy();
     setbkcolor(BLUE);
+
+    titleStage = new Stage(this);
 }
 
 void Game::cleanup()
@@ -23,20 +28,19 @@ void Game::cleanup()
 
 void Game::run()
 {
-    int gameEnd = 0;
     init();
 
     while(!gameEnd)
     {
-        if (kbhit())
-        {
-            int ch = getch();
-            if (ch == ESC_KEY)
-            {
-                gameEnd = 1;
-                break;
-            }
-        }
+		switch (state)
+		{
+		case 1:
+			break;
+		
+		default:
+            titleStage->run();
+			break;
+		}
 
     }
 
