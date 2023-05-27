@@ -1,0 +1,6 @@
+*.exe
+*.map
+*.obj
+*.swp
+.DS_Store
+screenshots/
