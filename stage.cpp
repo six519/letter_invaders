@@ -47,12 +47,16 @@ void Stage::draw()
     line(80, game->maxY - 80, game->maxX - 80, game->maxY - 80);
     line(80, game->maxY - 82, game->maxX - 80, game->maxY - 82);
 
+    setcolor(GREEN);
+    rectangle(263, 145, game->maxX - 263, 202);
+    setfillstyle(SOLID_FILL, GREEN);
+    floodfill(264, 146, GREEN);
+
+    setcolor(WHITE);
     line(265, 150, game->maxX - 265, 150);
     line(265, 152, game->maxX - 265, 152);
-
     line(265, 150, 265, 197);
     line(game->maxX - 265, 150, game->maxX - 265, 197);
-
     line(265, 195, game->maxX - 265, 195);
     line(265, 197, game->maxX - 265, 197);
 
@@ -66,9 +70,9 @@ void Stage::draw()
     floodfill(268, 159 + pluser, BLUE);
 
     //start game
-    setcolor((game->selectedOption == 0)? GREEN : LIGHTBLUE);
+    setcolor((game->selectedOption == 0)? LIGHTGREEN : LIGHTBLUE);
     outtextxy((game->maxX / 2) - 40, 160, "Start Game");
-    setcolor((game->selectedOption == 0)? LIGHTBLUE : GREEN);
+    setcolor((game->selectedOption == 0)? LIGHTBLUE : LIGHTGREEN);
     outtextxy((game->maxX / 2) - 36, 180, "Quit Game");
 
     setcolor(LIGHTMAGENTA);
@@ -76,7 +80,7 @@ void Stage::draw()
     setfillstyle(SOLID_FILL, LIGHTMAGENTA);
     floodfill(5, game->maxY - 15, LIGHTMAGENTA);
     setcolor(YELLOW);
-    outtextxy((game->maxX / 2) - 60, game->maxY - 10, "Esc -> Game Exit");
+    outtextxy((game->maxX / 2) - 83, game->maxY - 10, "Letter Invaders 2023");
 }
 
 void Stage::run()
