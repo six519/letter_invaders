@@ -2,8 +2,6 @@
 #define _GAME_H_
 #include "stage.h"
 
-#define TARGET_FPS 35
-#define FRAME_SPEED 5
 #define BGI_PATH "C:\\TC\\BGI"
 #define GAME_DELAY 5
 
