@@ -13,13 +13,16 @@ class Stage;
 
 class Game
 {
-	private:
+    private:
         void init();
         int graphicDriver;
         int graphicMode;
         int state;
         Stage *titleStage;
-	public:
+        int visualPage;
+        int activePage;
+        void changePage();
+    public:
         int gameEnd;
         int maxX;
         int maxY;

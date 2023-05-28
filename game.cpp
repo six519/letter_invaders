@@ -1,11 +1,14 @@
 #include <graphics.h>
 #include <conio.h>
+#include <dos.h>
 #include "game.h"
 
 Game::Game()
 {
     state = 0;
     gameEnd = 0;
+    visualPage = 0;
+    activePage = 1;
 }
 
 void Game::init()
@@ -42,7 +45,19 @@ void Game::run()
 			break;
 		}
 
+        changePage();
     }
 
     cleanup();
+}
+
+void Game::changePage()
+{
+    //set page
+    visualPage = (visualPage == 1)? 0 : 1;
+    activePage = (activePage == 1)? 0 : 1;
+    setvisualpage(visualPage);
+    setactivepage(activePage);
+    delay(GAME_DELAY);
+    cleardevice();
 }
