@@ -9,6 +9,7 @@ Game::Game()
     gameEnd = 0;
     visualPage = 0;
     activePage = 1;
+    selectedOption = 0;
 }
 
 void Game::init()

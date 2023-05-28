@@ -6,6 +6,8 @@
 #define GAME_DELAY 9
 
 #define ESC_KEY 27
+#define TAB_KEY 9
+#define ENTER_KEY 13
 
 class Stage;
 
@@ -21,6 +23,7 @@ class Game
         int activePage;
         void changePage();
     public:
+        int selectedOption;
         int gameEnd;
         int maxX;
         int maxY;

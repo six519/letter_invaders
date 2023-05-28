@@ -16,6 +16,17 @@ void Stage::handleKeys()
         {
             game->gameEnd = 1;
         }
+        else if (ch == TAB_KEY)
+        {
+            game->selectedOption = (game->selectedOption == 0)? 1 : 0;
+        }
+        else if (ch == ENTER_KEY)
+        {
+            if (game->selectedOption == 1)
+            {
+                game->gameEnd = 1;
+            }
+        }
     }
 }
 
@@ -34,8 +45,14 @@ void Stage::draw()
     line(80, game->maxY - 80, game->maxX - 80, game->maxY - 80);
     line(80, game->maxY - 82, game->maxX - 80, game->maxY - 82);
 
-    outtextxy(100, 100, "Choose an option..");
+    outtextxy(100, 100, "Press Tab to choose an option..");
     outtextxy(220, game->maxY - 100, "..press Enter to select highlighted item.");
+
+    //start game
+    setcolor((game->selectedOption == 0)? GREEN : LIGHTBLUE);
+    outtextxy((game->maxX / 2) - 40, 160, "Start Game");
+    setcolor((game->selectedOption == 0)? LIGHTBLUE : GREEN);
+    outtextxy((game->maxX / 2) - 36, 180, "Quit Game");
 
     setcolor(LIGHTMAGENTA);
     rectangle(0, game->maxY - 16, game->maxX, game->maxY);
