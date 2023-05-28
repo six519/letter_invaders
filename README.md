@@ -1,4 +1,4 @@
-# SDL Controller
+# Letter Invaders
 
 ![Game screenshot](game_000.png)
 
