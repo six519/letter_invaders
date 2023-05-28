@@ -32,6 +32,8 @@ void Stage::handleKeys()
 
 void Stage::draw()
 {
+    int pluser;
+
     //draw shits
     setcolor(WHITE);
     outtextxy(5, 8, "Recreated by: six519");
@@ -56,6 +58,12 @@ void Stage::draw()
 
     outtextxy(100, 100, "Press Tab to choose an option..");
     outtextxy(220, game->maxY - 100, "..press Enter to select highlighted item.");
+
+    setcolor(BLUE);
+    pluser = (game->selectedOption == 0)? 0 : 20;
+    rectangle(267, 158 + pluser, game->maxX - 267, 168 + pluser);
+    setfillstyle(SOLID_FILL, BLUE);
+    floodfill(268, 159 + pluser, BLUE);
 
     //start game
     setcolor((game->selectedOption == 0)? GREEN : LIGHTBLUE);
