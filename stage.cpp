@@ -22,7 +22,7 @@ void Stage::handleKeys()
 void Stage::draw()
 {
     setcolor(WHITE);
-    outtextxy(5, 8, "Developed by: six519");
+    outtextxy(5, 8, "Recreated by: six519");
     line(0, 20, game->maxX, 20);
     line(0, 22, game->maxX, 22);
 }

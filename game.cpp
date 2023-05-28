@@ -10,8 +10,8 @@ Game::Game()
 
 void Game::init()
 {
-    graphicDriver = DETECT;
-    graphicMode = 0;
+    graphicDriver = VGA;
+    graphicMode = VGAMED;
     initgraph(&graphicDriver, &graphicMode, BGI_PATH);
     maxX = getmaxx();
     maxY = getmaxy();
