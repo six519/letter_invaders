@@ -9,8 +9,8 @@ class Stage
     private:
         Game *game;
     public:
-		Stage(Game *gm);
-		void run();
+        Stage(Game *gm);
+        void run();
         void handleKeys();
         void draw();
 };

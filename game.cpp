@@ -35,15 +35,15 @@ void Game::run()
 
     while(!gameEnd)
     {
-		switch (state)
-		{
-		case 1:
-			break;
-		
-		default:
+        switch (state)
+        {
+        case 1:
+            break;
+        
+        default:
             titleStage->run();
-			break;
-		}
+            break;
+        }
 
         changePage();
     }
