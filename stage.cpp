@@ -45,6 +45,15 @@ void Stage::draw()
     line(80, game->maxY - 80, game->maxX - 80, game->maxY - 80);
     line(80, game->maxY - 82, game->maxX - 80, game->maxY - 82);
 
+    line(265, 150, game->maxX - 265, 150);
+    line(265, 152, game->maxX - 265, 152);
+
+    line(265, 150, 265, 197);
+    line(game->maxX - 265, 150, game->maxX - 265, 197);
+
+    line(265, 195, game->maxX - 265, 195);
+    line(265, 197, game->maxX - 265, 197);
+
     outtextxy(100, 100, "Press Tab to choose an option..");
     outtextxy(220, game->maxY - 100, "..press Enter to select highlighted item.");
 
