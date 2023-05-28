@@ -5,6 +5,7 @@
 #define TARGET_FPS 35
 #define FRAME_SPEED 5
 #define BGI_PATH "C:\\TC\\BGI"
+#define GAME_DELAY 5
 
 #define ESC_KEY 27
 

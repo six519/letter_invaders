@@ -8,6 +8,8 @@ class Stage
 {	
     private:
         Game *game;
+        int visualPage;
+        int activePage;
     public:
 		Stage(Game *gm);
 		void run();
