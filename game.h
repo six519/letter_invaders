@@ -3,7 +3,7 @@
 #include "stage.h"
 
 #define BGI_PATH "C:\\TC\\BGI"
-#define GAME_DELAY 5
+#define GAME_DELAY 9
 
 #define ESC_KEY 27
 
