@@ -107,6 +107,11 @@ void IntroStage::draw()
 
     game->drawHeader(roundStr);
 
+    line(85, 38, 560, 38);
+    line(85, 40, 560, 40);
+    line(85, 38, 85, 142);
+    line(560, 38, 560, 142);
+
     outtextxy(100, 50, "Nihilistic letters are attacking the English Language!");
     outtextxy(100, 62, "They aim to destroy literacy with random words. Can you");
     outtextxy(100, 74, "stop the crazed letters and save your language?");
@@ -114,6 +119,15 @@ void IntroStage::draw()
     outtextxy(100, 98, "Your strategy is to place your fingers on the home keys");
     outtextxy(100, 110, "('ASDF' and 'JKL;') and type the descending words before");
     outtextxy(100, 122, "they can cause cultural confusion");
+    
+    line(85, 140, 560, 140);
+    line(85, 142, 560, 142);
+
+
+    line(85, 170, 560, 170);
+    line(85, 172, 560, 172);
+    line(85, 170, 85, 264);
+    line(560, 170, 560, 264);
 
     outtextxy(100, 182, "You score points for each word correctly typed. The");
     outtextxy(100, 194, "first letter of a word is worth 10 points, the second");
@@ -121,6 +135,9 @@ void IntroStage::draw()
     outtextxy(100, 218, "miss deducts 10 points.");
 
     outtextxy(300, 242, "..Press Enter to begin Round 1.");
+
+    line(85, 262, 560, 262);
+    line(85, 264, 560, 264);
 
     game->drawFooter();
 }
