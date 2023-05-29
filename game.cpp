@@ -21,7 +21,7 @@ void Game::init()
     maxY = getmaxy();
     setbkcolor(BLUE);
 
-    titleStage = new Stage(this);
+    titleStage = new TitleStage(this);
 }
 
 void Game::cleanup()

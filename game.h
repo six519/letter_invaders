@@ -9,7 +9,7 @@
 #define TAB_KEY 9
 #define ENTER_KEY 13
 
-class Stage;
+class TitleStage;
 
 class Game
 {
@@ -18,7 +18,7 @@ class Game
         int graphicDriver;
         int graphicMode;
         int state;
-        Stage *titleStage;
+        TitleStage *titleStage;
         int visualPage;
         int activePage;
         void changePage();

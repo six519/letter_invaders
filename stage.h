@@ -6,13 +6,22 @@ class Game;
 
 class Stage
 {	
-    private:
+    protected:
         Game *game;
+        virtual void handleKeys();
+        virtual void draw();
     public:
         Stage(Game *gm);
         void run();
+};
+
+class TitleStage: public Stage
+{
+    protected:
         void handleKeys();
         void draw();
+    public:
+        TitleStage(Game *gm) : Stage(gm){}
 };
 
 #endif

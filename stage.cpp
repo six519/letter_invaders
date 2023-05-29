@@ -7,7 +7,13 @@ Stage::Stage(Game *gm)
     game = gm;
 }
 
-void Stage::handleKeys()
+void Stage::run()
+{
+    handleKeys();
+    draw();
+}
+
+void TitleStage::handleKeys()
 {
     if (kbhit())
     {
@@ -30,7 +36,7 @@ void Stage::handleKeys()
     }
 }
 
-void Stage::draw()
+void TitleStage::draw()
 {
     int pluser;
 
@@ -81,10 +87,4 @@ void Stage::draw()
     floodfill(5, game->maxY - 15, LIGHTMAGENTA);
     setcolor(YELLOW);
     outtextxy((game->maxX / 2) - 83, game->maxY - 10, "Letter Invaders 2023");
-}
-
-void Stage::run()
-{
-    handleKeys();
-    draw();
 }
