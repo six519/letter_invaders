@@ -1,6 +1,8 @@
 #include "stage.h"
 #include <conio.h>
 #include <graphics.h>
+#include <string.h>
+#include <stdlib.h>
 
 Stage::Stage(Game *gm)
 {
@@ -99,5 +101,11 @@ void IntroStage::handleKeys()
 
 void IntroStage::draw()
 {
+    char roundStr[50] = "Round ";
+    char buffer[50];
+    strcat(roundStr, itoa(game->round, buffer, 10));
 
+    game->drawHeader(roundStr);
+
+    game->drawFooter();
 }
