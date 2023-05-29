@@ -24,4 +24,13 @@ class TitleStage: public Stage
         TitleStage(Game *gm) : Stage(gm){}
 };
 
+class IntroStage: public Stage
+{
+    protected:
+        void handleKeys();
+        void draw();
+    public:
+        IntroStage(Game *gm) : Stage(gm){}
+};
+
 #endif

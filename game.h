@@ -10,6 +10,7 @@
 #define ENTER_KEY 13
 
 class TitleStage;
+class IntroStage;
 
 class Game
 {
@@ -17,8 +18,8 @@ class Game
         void init();
         int graphicDriver;
         int graphicMode;
-        int state;
         TitleStage *titleStage;
+        IntroStage *introStage;
         int visualPage;
         int activePage;
         void changePage();
@@ -27,6 +28,8 @@ class Game
         int gameEnd;
         int maxX;
         int maxY;
+        int round;
+        int state;
         Game();
         void run();
         void cleanup();

@@ -32,6 +32,10 @@ void TitleStage::handleKeys()
             {
                 game->gameEnd = 1;
             }
+            else
+            {
+                game->state = 1;
+            }
         }
     }
 }
@@ -87,4 +91,21 @@ void TitleStage::draw()
     floodfill(5, game->maxY - 15, LIGHTMAGENTA);
     setcolor(YELLOW);
     outtextxy((game->maxX / 2) - 83, game->maxY - 10, "Letter Invaders 2023");
+}
+
+void IntroStage::handleKeys()
+{
+    if (kbhit())
+    {
+        int ch = getch();
+        if (ch == ESC_KEY)
+        {
+            game->gameEnd = 1;
+        }
+    }
+}
+
+void IntroStage::draw()
+{
+
 }

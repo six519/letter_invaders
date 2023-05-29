@@ -10,6 +10,7 @@ Game::Game()
     visualPage = 0;
     activePage = 1;
     selectedOption = 0;
+    round = 1;
 }
 
 void Game::init()
@@ -22,6 +23,7 @@ void Game::init()
     setbkcolor(BLUE);
 
     titleStage = new TitleStage(this);
+    introStage = new IntroStage(this);
 }
 
 void Game::cleanup()
@@ -39,6 +41,7 @@ void Game::run()
         switch (state)
         {
         case 1:
+            introStage->run();
             break;
         
         default:
