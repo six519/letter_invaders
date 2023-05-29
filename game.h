@@ -33,6 +33,8 @@ class Game
         Game();
         void run();
         void cleanup();
+        void drawHeader(char txt[]);
+        void drawFooter();
 };
 
 #endif

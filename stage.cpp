@@ -45,10 +45,7 @@ void TitleStage::draw()
     int pluser;
 
     //draw shits
-    setcolor(WHITE);
-    outtextxy(5, 8, "Recreated by: six519");
-    line(0, 20, game->maxX, 20);
-    line(0, 22, game->maxX, 22);
+    game->drawHeader("Recreated by: six519");
 
     line(80, 80, game->maxX - 80, 80);
     line(80, 82, game->maxX - 80, 82);
@@ -85,12 +82,7 @@ void TitleStage::draw()
     setcolor((game->selectedOption == 0)? LIGHTBLUE : LIGHTGREEN);
     outtextxy((game->maxX / 2) - 36, 180, "Quit Game");
 
-    setcolor(LIGHTMAGENTA);
-    rectangle(0, game->maxY - 16, game->maxX, game->maxY);
-    setfillstyle(SOLID_FILL, LIGHTMAGENTA);
-    floodfill(5, game->maxY - 15, LIGHTMAGENTA);
-    setcolor(YELLOW);
-    outtextxy((game->maxX / 2) - 83, game->maxY - 10, "Letter Invaders 2023");
+    game->drawFooter();
 }
 
 void IntroStage::handleKeys()

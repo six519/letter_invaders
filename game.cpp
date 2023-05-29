@@ -65,3 +65,21 @@ void Game::changePage()
     delay(GAME_DELAY);
     cleardevice();
 }
+
+void Game::drawHeader(char txt[])
+{
+    setcolor(WHITE);
+    outtextxy(5, 8, txt);
+    line(0, 20, maxX, 20);
+    line(0, 22, maxX, 22);
+}
+
+void Game::drawFooter()
+{
+    setcolor(LIGHTMAGENTA);
+    rectangle(0, maxY - 16, maxX, maxY);
+    setfillstyle(SOLID_FILL, LIGHTMAGENTA);
+    floodfill(5, maxY - 15, LIGHTMAGENTA);
+    setcolor(YELLOW);
+    outtextxy((maxX / 2) - 83, maxY - 10, "Letter Invaders 2023");
+}
