@@ -106,7 +106,9 @@ void IntroStage::draw()
     strcat(roundStr, itoa(game->round, buffer, 10));
 
     game->drawHeader(roundStr);
-
+    game->drawScore();
+    
+    setcolor(WHITE);
     line(85, 38, 560, 38);
     line(85, 40, 560, 40);
     line(85, 38, 85, 142);

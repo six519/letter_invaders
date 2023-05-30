@@ -1,6 +1,8 @@
 #include <graphics.h>
 #include <conio.h>
 #include <dos.h>
+#include <stdlib.h>
+#include <string.h>
 #include "game.h"
 
 Game::Game()
@@ -11,6 +13,7 @@ Game::Game()
     activePage = 1;
     selectedOption = 0;
     round = 1;
+    score = 0;
 }
 
 void Game::init()
@@ -82,4 +85,13 @@ void Game::drawFooter()
     floodfill(5, maxY - 15, LIGHTMAGENTA);
     setcolor(YELLOW);
     outtextxy((maxX / 2) - 83, maxY - 10, "Letter Invaders 2023");
+}
+
+void Game::drawScore()
+{
+    char scoreStr[50] = "Score: ";
+    char buffer[50];
+    strcat(scoreStr, itoa(score, buffer, 10));
+    setcolor(YELLOW);
+    outtextxy((maxX / 2) - ((strlen(scoreStr) * 13) / 2), 8, scoreStr);
 }

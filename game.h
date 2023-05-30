@@ -30,11 +30,13 @@ class Game
         int maxY;
         int round;
         int state;
+        int score;
         Game();
         void run();
         void cleanup();
         void drawHeader(char txt[]);
         void drawFooter();
+        void drawScore();
 };
 
 #endif
