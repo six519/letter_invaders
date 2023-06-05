@@ -21,6 +21,14 @@ Game::Game()
         buildings[xx] = new Building(counter);
         counter += 8;
     }
+
+    /*
+    int test[] = { 205 };
+    int test2[] = { 187, 186 };
+    buildings[0]->setBuildingChars(test, 1);
+    buildings[1]->setBuildingChars(test, 1);
+    buildings[2]->setBuildingChars(test2, 2);
+    */
 }
 
 void Game::init()

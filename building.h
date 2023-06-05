@@ -3,18 +3,14 @@
 
 #define BUILDING_START_Y 296
 
-struct BuildingChar{
-    int charInt;
-};
-
 class Building {
     public:
         int isBlown;
         int x;
         int buildingCount;
-        struct BuildingChar buildingChars[];
+        int intChars[];
         Building(int ex);
-        void setBuildingChars(struct BuildingChar bChars[]);
+        void setBuildingChars(int thisIntChars[], int bCount);
         void draw();
 };
 

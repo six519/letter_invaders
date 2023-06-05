@@ -2,6 +2,9 @@
 #include <graphics.h>
 #include <string.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+
 Building::Building(int ex)
 {
     x = ex;
@@ -9,12 +12,12 @@ Building::Building(int ex)
     buildingCount = 0;
 }
 
-void Building::setBuildingChars(struct BuildingChar bChars[])
+void Building::setBuildingChars(int thisIntChars[], int bCount)
 {
-    for (int xx=0; xx < sizeof(bChars); xx++)
+    buildingCount = bCount;
+    for (int xx = 0; xx < buildingCount; xx++)
     {
-        buildingChars[xx] = bChars[xx];
-        buildingCount += 1;
+        intChars[xx] = thisIntChars[xx];
     }
 }
 
@@ -25,9 +28,9 @@ void Building::draw()
         int thisY = BUILDING_START_Y;
         char buffer[2];
 
-        for (int xx=0; xx < buildingCount; x++)
+        for (int xx=0; xx < buildingCount; xx++)
         {
-            char str[2] = { (char) buildingChars->charInt, '\0' };
+            char str[2] = { (char) intChars[xx], '\0' };
             strcpy(buffer, str);
             outtextxy(x, thisY, buffer);
 
