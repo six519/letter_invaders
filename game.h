@@ -1,6 +1,7 @@
 #ifndef _GAME_H_
 #define _GAME_H_
 #include "stage.h"
+#include "building.h"
 
 #define BGI_PATH "C:\\TC\\BGI"
 #define GAME_DELAY 9
