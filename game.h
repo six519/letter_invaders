@@ -9,8 +9,7 @@
 #define ESC_KEY 27
 #define TAB_KEY 9
 #define ENTER_KEY 13
-#define GAME_WIDTH 640
-#define GAME_HEIGHT 350
+#define MAX_BUILDING 80
 
 class TitleStage;
 class IntroStage;
@@ -40,6 +39,7 @@ class Game
         void drawHeader(char txt[]);
         void drawFooter();
         void drawScore();
+        Building *buildings[MAX_BUILDING];
 };
 
 #endif

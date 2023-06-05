@@ -14,6 +14,13 @@ Game::Game()
     selectedOption = 0;
     round = 1;
     score = 0;
+
+    int counter = 0;
+    for(int xx = 0; xx < MAX_BUILDING; xx++)
+    {
+        buildings[xx] = new Building(counter);
+        counter += 8;
+    }
 }
 
 void Game::init()
