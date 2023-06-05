@@ -25,6 +25,7 @@ class Game
         int visualPage;
         int activePage;
         void changePage();
+        Building *buildings[MAX_BUILDING];
     public:
         int selectedOption;
         int gameEnd;
@@ -39,7 +40,7 @@ class Game
         void drawHeader(char txt[]);
         void drawFooter();
         void drawScore();
-        Building *buildings[MAX_BUILDING];
+        void drawBuildings();
 };
 
 #endif

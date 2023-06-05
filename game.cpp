@@ -102,3 +102,12 @@ void Game::drawScore()
     setcolor(YELLOW);
     outtextxy((maxX / 2) - ((strlen(scoreStr) * 13) / 2), 8, scoreStr);
 }
+
+void Game::drawBuildings()
+{
+    setcolor(CYAN);
+    for(int xx = 0; xx < MAX_BUILDING; xx++)
+    {
+        buildings[xx]->draw();
+    }   
+}
