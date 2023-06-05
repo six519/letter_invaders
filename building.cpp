@@ -5,8 +5,8 @@ Building::Building(struct BuildingChar bChars[], int ex)
     x = ex;
     isBlown = 0;
 
-    for (int x=0; x < sizeof(bChars); x++)
+    for (int xx=0; xx < sizeof(bChars); xx++)
     {
-        buildingChars[x] = bChars[x];
+        buildingChars[xx] = bChars[xx];
     }
 }
