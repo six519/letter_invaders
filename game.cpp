@@ -15,6 +15,11 @@ Game::Game()
     round = 1;
     score = 0;
 
+    struct Block blocks[80] = {
+        { BUILDING_START_Y, 1, { D_HORIZONTAL } },
+        { BUILDING_START_Y, 1, { D_DOWN_LEFT } }
+    };
+
     int counter = 0;
     for(int xx = 0; xx < MAX_BUILDING; xx++)
     {
@@ -23,11 +28,8 @@ Game::Game()
     }
 
     /*
-    int test[] = { 205 };
-    int test2[] = { 187, 186 };
-    buildings[0]->setBuildingChars(test, 1);
-    buildings[1]->setBuildingChars(test, 1);
-    buildings[2]->setBuildingChars(test2, 2);
+    buildings[0]->setBuildingChars(blocks[0].chars, blocks[0].length, blocks[0].startY);
+    buildings[1]->setBuildingChars(blocks[1].chars, blocks[1].length, blocks[1].startY);
     */
 }
 

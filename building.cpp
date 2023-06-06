@@ -10,11 +10,13 @@ Building::Building(int ex)
     x = ex;
     isBlown = 0;
     buildingCount = 0;
+    startY = 0;
 }
 
-void Building::setBuildingChars(int thisIntChars[], int bCount)
+void Building::setBuildingChars(int thisIntChars[], int bCount, int sY)
 {
     buildingCount = bCount;
+    startY = sY;
     for (int xx = 0; xx < buildingCount; xx++)
     {
         intChars[xx] = thisIntChars[xx];
@@ -25,7 +27,7 @@ void Building::draw()
 {
     if (!isBlown)
     {
-        int thisY = BUILDING_START_Y;
+        int thisY = startY;
         char buffer[2];
 
         for (int xx=0; xx < buildingCount; xx++)
