@@ -141,6 +141,6 @@ void IntroStage::draw()
     line(85, 262, 560, 262);
     line(85, 264, 560, 264);
 
-    game->drawFooter();
     game->drawBuildings();
+    game->drawFooter();
 }

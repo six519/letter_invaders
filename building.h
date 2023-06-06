@@ -1,7 +1,7 @@
 #ifndef _BUILDING_H_
 #define _BUILDING_H_
 
-#define BUILDING_START_Y 296
+#define BUILDING_START_Y 320
 #define D_VERTICAL 186
 #define D_DOWN_LEFT 187
 #define D_UP_LEFT 188
@@ -13,7 +13,7 @@
 struct Block {
     int startY;
     int length;
-    int chars[10];
+    int chars[2];
 };
 
 class Building {
