@@ -9,6 +9,9 @@ Stage::Stage(Game *gm)
     game = gm;
 }
 
+void Stage::draw(){}
+void Stage::handleKeys(){}
+
 void Stage::run()
 {
     handleKeys();
