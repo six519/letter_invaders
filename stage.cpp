@@ -99,6 +99,10 @@ void IntroStage::handleKeys()
         {
             game->gameEnd = 1;
         }
+        else if (ch == ENTER_KEY)
+        {
+            game->state = 2;
+        }
     }
 }
 
@@ -146,4 +150,30 @@ void IntroStage::draw()
 
     game->drawBuildings();
     game->drawFooter();
+}
+
+void GameStage::handleKeys()
+{
+    if (kbhit())
+    {
+        int ch = getch();
+        if (ch == ESC_KEY)
+        {
+            // exit the game temporarily
+            // go to end score stage permanently
+            game->gameEnd = 1;
+        }
+    }
+}
+
+void GameStage::draw()
+{
+    char roundStr[50] = "Round ";
+    char buffer[50];
+    strcat(roundStr, itoa(game->round, buffer, 10));
+
+    game->drawHeader(roundStr);
+    game->drawScore();
+
+    game->drawBuildings();
 }

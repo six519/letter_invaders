@@ -13,6 +13,7 @@
 
 class TitleStage;
 class IntroStage;
+class GameStage;
 
 class Game
 {
@@ -22,6 +23,7 @@ class Game
         int graphicMode;
         TitleStage *titleStage;
         IntroStage *introStage;
+        GameStage *gameStage;
         int visualPage;
         int activePage;
         void changePage();

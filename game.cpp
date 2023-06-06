@@ -126,6 +126,7 @@ void Game::init()
 
     titleStage = new TitleStage(this);
     introStage = new IntroStage(this);
+    gameStage = new GameStage(this);
 }
 
 void Game::cleanup()
@@ -144,6 +145,10 @@ void Game::run()
         {
         case 1:
             introStage->run();
+            break;
+
+        case 2:
+            gameStage->run();
             break;
         
         default:
