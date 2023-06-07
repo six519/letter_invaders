@@ -202,7 +202,7 @@ void Game::drawScore()
 
 void Game::drawBuildings()
 {
-    setcolor(CYAN);
+    setcolor(LIGHTCYAN);
     for(int xx = 0; xx < MAX_BUILDING; xx++)
     {
         buildings[xx]->draw();
