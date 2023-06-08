@@ -16,7 +16,12 @@ Game::Game()
     score = 0;
     startSoundStarted = 0;
 
-    startSound = new Sound(introSound, 0, INTRO_SOUND_LENGTH);
+    // intro sound
+    int introSound[3] = {
+        1000, -1, -1,
+    };
+    startSound = new Sound(introSound, 0, 3);
+    // end of intro sound
 
     struct Block blocks[80] = {
         { BUILDING_START_Y, 1, { D_HORIZONTAL } },

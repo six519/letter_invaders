@@ -3,12 +3,6 @@
 #include <dos.h>
 #include <stdlib.h>
 
-#define INTRO_SOUND_LENGTH 3
-
-int introSound[INTRO_SOUND_LENGTH] = {
-    1000, -1, -1,
-};
-
 class Sound
 {
     private:

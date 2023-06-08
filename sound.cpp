@@ -1,10 +1,5 @@
 #include "sound.h"
 
-#include <stdio.h>
-#include <graphics.h>
-#include <stdlib.h>
-#include <dos.h>
-
 Sound::Sound(int notes[], int isLoop, int nCount)
 {
     isPlay = 0;
