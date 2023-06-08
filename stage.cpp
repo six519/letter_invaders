@@ -16,6 +16,7 @@ void Stage::run()
 {
     handleKeys();
     draw();
+    game->startSound->process();
 }
 
 void TitleStage::handleKeys()
@@ -39,6 +40,7 @@ void TitleStage::handleKeys()
             }
             else
             {
+                game->startSound->stop();
                 game->state = 1;
             }
         }

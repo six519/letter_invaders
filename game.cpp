@@ -14,6 +14,9 @@ Game::Game()
     selectedOption = 0;
     round = 1;
     score = 0;
+    startSoundStarted = 0;
+
+    startSound = new Sound(introSound, 0, INTRO_SOUND_LENGTH);
 
     struct Block blocks[80] = {
         { BUILDING_START_Y, 1, { D_HORIZONTAL } },
@@ -133,6 +136,7 @@ void Game::cleanup()
 {
     closegraph();
     clrscr();
+    nosound();
 }
 
 void Game::run()
@@ -152,6 +156,11 @@ void Game::run()
             break;
         
         default:
+            if (!startSound->isPlaying() && !startSoundStarted)
+            {
+                startSoundStarted = 1;
+                startSound->play();
+            }
             titleStage->run();
             break;
         }

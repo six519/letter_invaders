@@ -2,6 +2,7 @@
 #define _GAME_H_
 #include "stage.h"
 #include "building.h"
+#include "sound.h"
 
 #define BGI_PATH "C:\\TC\\BGI"
 #define GAME_DELAY 9
@@ -29,6 +30,8 @@ class Game
         void changePage();
         Building *buildings[MAX_BUILDING];
     public:
+        Sound *startSound;
+        int startSoundStarted;
         int selectedOption;
         int gameEnd;
         int maxX;
