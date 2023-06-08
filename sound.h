@@ -3,6 +3,17 @@
 #include <dos.h>
 #include <stdlib.h>
 
+#define D5 587
+#define G4 392
+#define A4 440
+#define B4 494
+#define C5 523
+#define E5 659
+#define D5 587
+#define F5 698
+#define G5 784
+#define GB4 370 
+
 class Sound
 {
     private:

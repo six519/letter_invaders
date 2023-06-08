@@ -17,10 +17,42 @@ Game::Game()
     startSoundStarted = 0;
 
     // intro sound
-    int introSound[3] = {
-        1000, -1, -1,
+    int introSound[73] = {
+        D5, -3, -1,
+        G4, 0, 
+        A4, 0, 
+        B4, 0,
+        C5, 0,
+        D5, -2,
+        G4, -2,
+        G4, -3, -2,
+        E5, -3, -1,
+        C5, 0,
+        D5, 0,
+        E5, 0,
+        F5, 0,
+        G5, -2,
+        G4, -2,
+        G4, -3, -2,
+        B4, -3, -1,
+        C5, 0,
+        B4, 0,
+        A4, 0,
+        G4, 0,
+        A4, -3, -1,
+        B4, 0,
+        A4, 0,
+        G4, 0,
+        GB4, 0,
+        G4, -3, -1,
+        G4, 0,
+        A4, 0,
+        B4, 0,
+        G4, 0,
+        A4, -3, -1,
+        -5,
     };
-    startSound = new Sound(introSound, 0, 3);
+    startSound = new Sound(introSound, 1, 73);
     // end of intro sound
 
     struct Block blocks[80] = {
