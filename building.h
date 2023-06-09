@@ -1,5 +1,10 @@
 #ifndef _BUILDING_H_
 #define _BUILDING_H_
+#include <graphics.h>
+#include <string.h>
+
+#include <stdio.h>
+#include <stdlib.h>
 
 #define BUILDING_START_Y 320
 #define D_VERTICAL 186

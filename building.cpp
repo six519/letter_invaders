@@ -1,9 +1,4 @@
 #include "building.h"
-#include <graphics.h>
-#include <string.h>
-
-#include <stdio.h>
-#include <stdlib.h>
 
 Building::Building(int ex)
 {

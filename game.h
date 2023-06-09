@@ -1,5 +1,10 @@
 #ifndef _GAME_H_
 #define _GAME_H_
+#include <graphics.h>
+#include <conio.h>
+#include <dos.h>
+#include <stdlib.h>
+#include <string.h>
 #include "stage.h"
 #include "building.h"
 #include "sound.h"

@@ -1,8 +1,3 @@
-#include <graphics.h>
-#include <conio.h>
-#include <dos.h>
-#include <stdlib.h>
-#include <string.h>
 #include "game.h"
 
 Game::Game()

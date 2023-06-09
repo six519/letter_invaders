@@ -1,5 +1,9 @@
 #ifndef _STAGE_H_
 #define _STAGE_H_
+#include <conio.h>
+#include <graphics.h>
+#include <string.h>
+#include <stdlib.h>
 #include "game.h"
 
 class Game;

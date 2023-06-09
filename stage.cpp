@@ -1,8 +1,4 @@
 #include "stage.h"
-#include <conio.h>
-#include <graphics.h>
-#include <string.h>
-#include <stdlib.h>
 
 Stage::Stage(Game *gm)
 {
