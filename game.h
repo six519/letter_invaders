@@ -51,6 +51,7 @@ class Game
         void drawFooter();
         void drawScore();
         void drawBuildings();
+        int getRandomNumber(int lowerBound, int upperBound);
 };
 
 #endif

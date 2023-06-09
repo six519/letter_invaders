@@ -249,3 +249,16 @@ void Game::drawBuildings()
         buildings[xx]->draw();
     }   
 }
+
+int Game::getRandomNumber(int lowerBound, int upperBound)
+{
+    randomize();
+    int ret = rand() % (upperBound + 1);
+
+    while (ret < lowerBound)
+    {
+        ret = rand() % (upperBound + 1);
+    }
+
+    return ret;
+}
