@@ -1,11 +1,8 @@
 #include "building.h"
 
 Building::Building(int ex)
+    : x(ex), isBlown(0), buildingCount(0), startY(0)
 {
-    x = ex;
-    isBlown = 0;
-    buildingCount = 0;
-    startY = 0;
 }
 
 void Building::setBuildingChars(int thisIntChars[], int bCount, int sY)
@@ -30,7 +27,6 @@ void Building::draw()
             char str[2] = { (char) intChars[xx], '\0' };
             strcpy(buffer, str);
             outtextxy(x, thisY, buffer);
-
             thisY += 8;
         }
     }
