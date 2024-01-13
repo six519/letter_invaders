@@ -111,7 +111,7 @@ void Game::drawFooter()
     setfillstyle(SOLID_FILL, LIGHTMAGENTA);
     floodfill(5, maxY - 15, LIGHTMAGENTA);
     setcolor(YELLOW);
-    outtextxy((maxX / 2) - 83, maxY - 10, "Letter Invaders 2023");
+    outtextxy((maxX / 2) - 83, maxY - 10, GAME_TITLE);
 }
 
 void Game::drawScore()
