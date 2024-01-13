@@ -15,7 +15,6 @@
 #define ESC_KEY 27
 #define TAB_KEY 9
 #define ENTER_KEY 13
-#define MAX_BUILDING 80
 
 class TitleStage;
 class IntroStage;
