@@ -37,7 +37,7 @@ static char AVAILABLE_LETTERS[AVAILABLE_LETTERS_COUNT][LETTER_MAX_LENGTH] = {
 class Invader 
 {
     public:
-        Invader(int x, int letterIndex);
+        Invader(int letterIndex);
         int x;
         int y;
         int letterIndex;

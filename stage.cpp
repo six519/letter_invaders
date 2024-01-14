@@ -175,3 +175,12 @@ void GameStage::draw()
 
     game->drawBuildings();
 }
+
+GameStage::GameStage(Game *gm) : Stage(gm)
+{
+    spawnedInvadersCount = 0;
+    for(int xx = 0; xx < AVAILABLE_LETTERS_COUNT; xx++)
+    {
+        invaders[xx] = new Invader(xx);
+    }
+}

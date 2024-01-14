@@ -7,6 +7,8 @@
 #include "game.h"
 #include "invader.h"
 
+#define MAX_SPAWNED_INVADERS 10
+
 class Game;
 
 class Stage
@@ -44,8 +46,10 @@ class GameStage: public Stage
         void handleKeys();
         void draw();
     public:
-        GameStage(Game *gm) : Stage(gm){}
+        GameStage(Game *gm);
         Invader *invaders[AVAILABLE_LETTERS_COUNT];
+        int spawnedInvadersCount;
+        int spawnedInvadersArray[MAX_SPAWNED_INVADERS];
 };
 
 #endif
