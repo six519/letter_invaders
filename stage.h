@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "game.h"
+#include "invader.h"
 
 class Game;
 
@@ -43,7 +44,8 @@ class GameStage: public Stage
         void handleKeys();
         void draw();
     public:
-        GameStage(Game *gm) : Stage(gm){}  
+        GameStage(Game *gm) : Stage(gm){}
+        Invader *invaders[AVAILABLE_LETTERS_COUNT];
 };
 
 #endif
