@@ -1,8 +1,11 @@
 #ifndef _INVADER_H_
 #define _INVADER_H_
+#include <graphics.h>
 
 #define AVAILABLE_LETTERS_COUNT 76
 #define LETTER_MAX_LENGTH 10
+#define INVADER_SPEED 1
+#define INVADER_DEFAULT_Y 23
 
 static char AVAILABLE_LETTERS[AVAILABLE_LETTERS_COUNT][LETTER_MAX_LENGTH] = {
     "a", "A",
@@ -65,6 +68,7 @@ class Invader
         int y;
         int letterIndex;
         int isVisible;
+        void draw();
 };
 
 #endif

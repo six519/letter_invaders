@@ -7,7 +7,8 @@
 #include "game.h"
 #include "invader.h"
 
-#define MAX_SPAWNED_INVADERS 10
+#define MAX_SPAWNED_INVADERS 20
+#define SPAWN_TIME_TRIGGER 20
 
 class Game;
 
@@ -45,6 +46,10 @@ class GameStage: public Stage
     protected:
         void handleKeys();
         void draw();
+        void spawnInvader();
+        void drawInvaders();
+        int canSpawn();
+        int spawnTime;
     public:
         GameStage(Game *gm);
         Invader *invaders[AVAILABLE_LETTERS_COUNT];

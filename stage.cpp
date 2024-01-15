@@ -164,6 +164,39 @@ void GameStage::handleKeys()
     }
 }
 
+void GameStage::spawnInvader()
+{
+    if (canSpawn() && spawnedInvadersCount < MAX_SPAWNED_INVADERS)
+    {
+        int letterIndex = -1;
+        /*
+            TODO: add max retry to stop infinite loop
+        */
+        while (1)
+        {
+            letterIndex = game->getRandomNumber(0, AVAILABLE_LETTERS_COUNT - 1);
+
+            if (!invaders[letterIndex]->isVisible)
+            {
+                invaders[letterIndex]->isVisible = 1;
+                invaders[letterIndex]->x = game->getRandomNumber(0, game->maxX - 5); //TEMPORARY ONLY TODO: add validator
+                invaders[letterIndex]->y = INVADER_DEFAULT_Y;
+                break;
+            }
+        }
+        spawnedInvadersArray[spawnedInvadersCount] = letterIndex;
+        spawnedInvadersCount += 1;   
+    }
+}
+
+void GameStage::drawInvaders()
+{
+    for(int xx = 0; xx < spawnedInvadersCount; xx++)
+    {
+        invaders[spawnedInvadersArray[xx]]->draw();
+    }
+}
+
 void GameStage::draw()
 {
     char roundStr[50] = "Round ";
@@ -173,14 +206,29 @@ void GameStage::draw()
     game->drawHeader(roundStr);
     game->drawScore();
 
+    spawnInvader();
+    drawInvaders();
+
     game->drawBuildings();
 }
 
-GameStage::GameStage(Game *gm) : Stage(gm)
+GameStage::GameStage(Game *gm) 
+    : Stage(gm), spawnTime(0), spawnedInvadersCount(0)
 {
-    spawnedInvadersCount = 0;
     for(int xx = 0; xx < AVAILABLE_LETTERS_COUNT; xx++)
     {
         invaders[xx] = new Invader(xx);
     }
+}
+
+int GameStage::canSpawn()
+{
+    if (spawnTime >= SPAWN_TIME_TRIGGER)
+    {
+        spawnTime = 0;
+        return 1;
+    }
+
+    spawnTime += 1;
+    return 0;
 }
