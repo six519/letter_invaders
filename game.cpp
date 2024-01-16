@@ -9,7 +9,6 @@ Game::Game()
     selectedOption = 0;
     round = 1;
     score = 0;
-    startSoundStarted = 0;
 
     // intro sound
     startSound = new Sound(INTRO_SOUND, 1, INTRO_SOUND_LENGTH);
@@ -70,9 +69,8 @@ void Game::run()
             break;
         
         default:
-            if (!startSound->isPlaying() && !startSoundStarted)
+            if (!startSound->isPlaying())
             {
-                startSoundStarted = 1;
                 startSound->play();
             }
             titleStage->run();
