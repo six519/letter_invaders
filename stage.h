@@ -9,6 +9,7 @@
 
 #define MAX_SPAWNED_INVADERS 20
 #define SPAWN_TIME_TRIGGER 20
+#define MAX_SPAWN_RETRY 3
 
 class Game;
 
@@ -55,6 +56,7 @@ class GameStage: public Stage
         Invader *invaders[AVAILABLE_LETTERS_COUNT];
         int spawnedInvadersCount;
         int spawnedInvadersArray[MAX_SPAWNED_INVADERS];
+        int retry;
 };
 
 #endif

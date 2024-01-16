@@ -169,9 +169,6 @@ void GameStage::spawnInvader()
     if (canSpawn() && spawnedInvadersCount < MAX_SPAWNED_INVADERS)
     {
         int letterIndex = -1;
-        /*
-            TODO: add max retry to stop infinite loop
-        */
         while (1)
         {
             letterIndex = game->getRandomNumber(0, AVAILABLE_LETTERS_COUNT - 1);
@@ -183,7 +180,16 @@ void GameStage::spawnInvader()
                 invaders[letterIndex]->y = INVADER_DEFAULT_Y;
                 break;
             }
+
+            retry += 1;
+
+            if (retry >= MAX_SPAWN_RETRY)
+            {
+                retry = 0;
+                return;
+            }
         }
+        retry = 0;
         spawnedInvadersArray[spawnedInvadersCount] = letterIndex;
         spawnedInvadersCount += 1;   
     }
@@ -213,7 +219,7 @@ void GameStage::draw()
 }
 
 GameStage::GameStage(Game *gm) 
-    : Stage(gm), spawnTime(0), spawnedInvadersCount(0)
+    : Stage(gm), spawnTime(0), spawnedInvadersCount(0), retry(0)
 {
     for(int xx = 0; xx < AVAILABLE_LETTERS_COUNT; xx++)
     {
