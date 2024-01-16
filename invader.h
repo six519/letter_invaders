@@ -6,6 +6,7 @@
 #define LETTER_MAX_LENGTH 10
 #define INVADER_SPEED 1
 #define INVADER_DEFAULT_Y 23
+#define INVADER_MOVE_TRIGGER 3
 
 static char AVAILABLE_LETTERS[AVAILABLE_LETTERS_COUNT][LETTER_MAX_LENGTH] = {
     "a", "A",
@@ -62,6 +63,9 @@ static char AVAILABLE_LETTERS[AVAILABLE_LETTERS_COUNT][LETTER_MAX_LENGTH] = {
 
 class Invader 
 {
+    private:
+        int canMove();
+        int moveTime;
     public:
         Invader(int letterIndex);
         int x;
