@@ -195,11 +195,38 @@ void GameStage::spawnInvader()
     }
 }
 
+void GameStage::reAllignInvaders(int index)
+{
+    invaders[spawnedInvadersArray[index]]->isVisible = 0;
+    for(int xx = index; xx < spawnedInvadersCount; xx++)
+    {
+        spawnedInvadersArray[xx] = spawnedInvadersArray[xx + 1];
+    }
+    spawnedInvadersCount -= 1;
+}
+
 void GameStage::drawInvaders()
 {
+    int reAllign = 0;
+    int indexToReAllign = -1;
     for(int xx = 0; xx < spawnedInvadersCount; xx++)
     {
+
+        if (invaders[spawnedInvadersArray[xx]]->y >= BUILDING_START_Y)
+        {
+            /*
+                TODO: building should blown up
+            */
+           indexToReAllign = xx;
+           reAllign = 1;
+           continue;
+        }
         invaders[spawnedInvadersArray[xx]]->draw();
+    }
+
+    if (reAllign)
+    {
+        reAllignInvaders(indexToReAllign);
     }
 }
 

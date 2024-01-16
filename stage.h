@@ -50,6 +50,7 @@ class GameStage: public Stage
         void spawnInvader();
         void drawInvaders();
         int canSpawn();
+        void reAllignInvaders(int index);
         int spawnTime;
     public:
         GameStage(Game *gm);
