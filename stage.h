@@ -7,7 +7,7 @@
 #include "game.h"
 #include "invader.h"
 
-#define MAX_SPAWNED_INVADERS 20
+#define MAX_SPAWNED_INVADERS 8
 #define SPAWN_TIME_TRIGGER 20
 #define MAX_SPAWN_RETRY 3
 
