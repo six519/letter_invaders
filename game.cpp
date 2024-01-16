@@ -19,7 +19,7 @@ Game::Game()
     for(int xx = 0; xx < MAX_BUILDING; xx++)
     {
         buildings[xx] = new Building(counter);
-        counter += 8;
+        counter += X_PADDING;
     }
 
     /*

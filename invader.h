@@ -1,10 +1,11 @@
 #ifndef _INVADER_H_
 #define _INVADER_H_
 #include <graphics.h>
+#include "building.h"
 
 #define AVAILABLE_LETTERS_COUNT 76
 #define LETTER_MAX_LENGTH 10
-#define INVADER_SPEED 1
+#define INVADER_SPEED 10
 #define INVADER_DEFAULT_Y 23
 #define INVADER_MOVE_TRIGGER 3
 

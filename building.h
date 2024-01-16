@@ -15,6 +15,7 @@
 #define D_HORIZONTAL 205
 #define SPACE 255
 #define MAX_BUILDING 80
+#define X_PADDING 8
 
 struct Block {
     int startY;

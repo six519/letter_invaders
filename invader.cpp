@@ -22,8 +22,14 @@ void Invader::draw()
 {
     if (isVisible)
     {
-        setcolor(WHITE);
-        outtextxy(x, y, AVAILABLE_LETTERS[letterIndex]);
+        int thisX = this->x;
+        for (int xx = 0; xx < sizeof(AVAILABLE_LETTERS[letterIndex]); xx++)
+        {
+            char individualChar[2] = { AVAILABLE_LETTERS[letterIndex][xx], '\0'};
+            setcolor(WHITE);
+            outtextxy(thisX, y, individualChar);
+            thisX += X_PADDING;
+        }
 
         if (canMove())
         {
