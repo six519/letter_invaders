@@ -13,6 +13,7 @@ void Stage::run()
     handleKeys();
     draw();
     game->startSound->process();
+    game->collisionSound->process();
 }
 
 void TitleStage::handleKeys()
@@ -197,6 +198,7 @@ void GameStage::spawnInvader()
 
 void GameStage::reAllignInvaders(int index)
 {
+    game->collisionSound->play();
     invaders[spawnedInvadersArray[index]]->isVisible = 0;
     for(int xx = index; xx < spawnedInvadersCount; xx++)
     {

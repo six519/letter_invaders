@@ -3,6 +3,8 @@
 #include <dos.h>
 #include <stdlib.h>
 
+#define G3 196
+#define G6 1567
 #define D5 587
 #define G4 392
 #define A4 440
@@ -15,6 +17,14 @@
 #define GB4 370
 
 #define INTRO_SOUND_LENGTH 73
+#define COLLISION_SOUND_LENGTH 4
+
+static int COLLISION_SOUND[COLLISION_SOUND_LENGTH] = {
+    G3,
+    G4,
+    G5,
+    G6,
+};
 
 static int INTRO_SOUND[INTRO_SOUND_LENGTH] = {
     D5, -3, -1,
