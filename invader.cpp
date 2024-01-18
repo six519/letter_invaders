@@ -23,9 +23,9 @@ void Invader::draw()
     if (isVisible)
     {
         int thisX = this->x;
-        for (int xx = 0; xx < sizeof(AVAILABLE_LETTERS[letterIndex]); xx++)
+        for (int xx = 0; xx < AVAILABLE_LETTERS[letterIndex].length; xx++)
         {
-            char individualChar[2] = { AVAILABLE_LETTERS[letterIndex][xx], '\0'};
+            char individualChar[2] = { AVAILABLE_LETTERS[letterIndex].chars[xx], '\0'};
             setcolor(WHITE);
             outtextxy(thisX, y, individualChar);
             thisX += X_PADDING;

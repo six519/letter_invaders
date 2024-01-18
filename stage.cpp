@@ -196,10 +196,25 @@ void GameStage::spawnInvader()
     }
 }
 
+void GameStage::destroyBuildings(int invaderX, int lettersCount)
+{
+    int buildingIndex = invaderX / X_PADDING;
+    for (int xx = 0; xx < lettersCount; xx++)
+    {
+        game->buildings[buildingIndex]->isBlown = 1;
+        buildingIndex += 1;
+        if (buildingIndex > (MAX_BUILDING - 1))
+        {
+            return;
+        }
+    }
+}
+
 void GameStage::reAllignInvaders(int index)
 {
     game->collisionSound->play();
     invaders[spawnedInvadersArray[index]]->isVisible = 0;
+    destroyBuildings(invaders[spawnedInvadersArray[index]]->x, AVAILABLE_LETTERS[invaders[spawnedInvadersArray[index]]->letterIndex].length);
     for(int xx = index; xx < spawnedInvadersCount; xx++)
     {
         spawnedInvadersArray[xx] = spawnedInvadersArray[xx + 1];
@@ -216,9 +231,6 @@ void GameStage::drawInvaders()
 
         if (invaders[spawnedInvadersArray[xx]]->y >= BUILDING_START_Y)
         {
-            /*
-                TODO: building should blown up
-            */
            indexToReAllign = xx;
            reAllign = 1;
            continue;

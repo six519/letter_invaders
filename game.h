@@ -33,8 +33,8 @@ class Game
         int visualPage;
         int activePage;
         void changePage();
-        Building *buildings[MAX_BUILDING];
     public:
+        Building *buildings[MAX_BUILDING];
         Sound *startSound;
         Sound *collisionSound;
         int selectedOption;
