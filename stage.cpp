@@ -177,7 +177,7 @@ void GameStage::spawnInvader()
             if (!invaders[letterIndex]->isVisible)
             {
                 invaders[letterIndex]->isVisible = 1;
-                invaders[letterIndex]->x = game->getRandomNumber(0, game->maxX - 5); //TEMPORARY ONLY TODO: add validator
+                invaders[letterIndex]->x = game->getRandomNumber(0, game->maxX - 5); //TEMPORARY ONLY TODO: add validator and make sure x is divisible by X_PADDING
                 invaders[letterIndex]->y = INVADER_DEFAULT_Y;
                 break;
             }
@@ -205,6 +205,10 @@ void GameStage::destroyBuildings(int invaderX, int lettersCount)
         buildingIndex += 1;
         if (buildingIndex > (MAX_BUILDING - 1))
         {
+            /*
+                TODO: remove this part, make sure that the buildingIndex is always within the range of MAX_BUILDING
+                TODO: the todo validator above will fix this part
+            */
             return;
         }
     }
