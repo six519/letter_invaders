@@ -165,6 +165,16 @@ void GameStage::handleKeys()
     }
 }
 
+int GameStage::reduceValue(int thisLetterIndex, int value)
+{
+    while (value + AVAILABLE_LETTERS[thisLetterIndex].length > MAX_BUILDING)
+    {
+        value -= 1;
+    }
+
+    return value * X_PADDING;
+}
+
 void GameStage::spawnInvader()
 {
     if (canSpawn() && spawnedInvadersCount < MAX_SPAWNED_INVADERS)
@@ -177,7 +187,7 @@ void GameStage::spawnInvader()
             if (!invaders[letterIndex]->isVisible)
             {
                 invaders[letterIndex]->isVisible = 1;
-                invaders[letterIndex]->x = game->getRandomNumber(0, game->maxX - 5); //TEMPORARY ONLY TODO: add validator and make sure x is divisible by X_PADDING
+                invaders[letterIndex]->x = reduceValue(letterIndex, game->getRandomNumber(0, MAX_BUILDING - 1));
                 invaders[letterIndex]->y = INVADER_DEFAULT_Y;
                 break;
             }
@@ -203,14 +213,6 @@ void GameStage::destroyBuildings(int invaderX, int lettersCount)
     {
         game->buildings[buildingIndex]->isBlown = 1;
         buildingIndex += 1;
-        if (buildingIndex > (MAX_BUILDING - 1))
-        {
-            /*
-                TODO: remove this part, make sure that the buildingIndex is always within the range of MAX_BUILDING
-                TODO: the todo validator above will fix this part
-            */
-            return;
-        }
     }
 }
 

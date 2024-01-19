@@ -52,6 +52,7 @@ class GameStage: public Stage
         int canSpawn();
         void reAllignInvaders(int index);
         void destroyBuildings(int invaderX, int lettersCount);
+        int reduceValue(int thisLetterIndex, int value);
         int spawnTime;
     public:
         GameStage(Game *gm);
