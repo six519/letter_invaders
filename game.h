@@ -11,11 +11,12 @@
 
 #define BGI_PATH "C:\\TC\\BGI"
 #define GAME_DELAY 9
-#define GAME_TITLE "Letter Invaders 2024"
+#define GAME_TITLE "Letter Invaders 2025"
 
 #define ESC_KEY 27
 #define TAB_KEY 9
 #define ENTER_KEY 13
+#define BULLET_CHAR 24
 
 class TitleStage;
 class IntroStage;

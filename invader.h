@@ -87,6 +87,7 @@ class Invader
         int y;
         int letterIndex;
         int isVisible;
+        int selectedCount;
         void draw();
 };
 
