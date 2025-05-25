@@ -87,6 +87,7 @@ class Invader
         int x;
         int y;
         int bulletY;
+        int showBullet;
         int letterIndex;
         int isVisible;
         int selectedCount;

@@ -1,7 +1,7 @@
 #include "invader.h"
 
 Invader::Invader(int letterIndex)
-    : x(0), y(INVADER_DEFAULT_Y), letterIndex(letterIndex), isVisible(0), moveTime(0), selectedCount(0), bulletY(BUILDING_START_Y - X_PADDING)
+    : x(0), y(INVADER_DEFAULT_Y), letterIndex(letterIndex), isVisible(0), moveTime(0), selectedCount(0), bulletY(BUILDING_START_Y - X_PADDING), showBullet(0)
 {
 
 }
@@ -47,11 +47,12 @@ void Invader::draw()
         y += INVADER_SPEED;
     }
 
-    /*
-    // draw bullet
-    setcolor(LIGHTRED);
-    char c[2] = { (char)BULLET_CHAR, '\0' };
-    outtextxy(this->x, bulletY, c);
-    bulletY -= INVADER_SPEED + 5;
-    */
+    if (showBullet)
+    {
+        // draw bullet
+        setcolor(LIGHTRED);
+        char c[2] = { (char)BULLET_CHAR, '\0' };
+        outtextxy(this->x, bulletY, c);
+        bulletY -= INVADER_SPEED + 5;
+    }
 }

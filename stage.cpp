@@ -181,6 +181,10 @@ void GameStage::handleKeys()
                     {
                         selectedIndex = spawnedInvadersArray[xx];
                     }
+                    else
+                    {
+                        invaders[spawnedInvadersArray[xx]]->showBullet = 1;
+                    }
                     break;
                 }
             }
@@ -194,6 +198,7 @@ void GameStage::handleKeys()
             invaders[selectedIndex]->selectedCount += 1;
             if (invaders[selectedIndex]->selectedCount == AVAILABLE_LETTERS[selectedIndex].length)
             {
+                invaders[selectedIndex]->showBullet = 1;
                 selectedIndex = -1;
             }            
         }
@@ -227,6 +232,7 @@ void GameStage::spawnInvader()
 
             if (!invaders[letterIndex]->isVisible)
             {
+                invaders[letterIndex]->showBullet = 0;
                 invaders[letterIndex]->bulletY = BUILDING_START_Y - X_PADDING;
                 invaders[letterIndex]->selectedCount = 0;
                 invaders[letterIndex]->isVisible = 1;
@@ -266,9 +272,14 @@ void GameStage::reAllignInvaders(int index)
         selectedIndex = -1;
     }
 
-    game->collisionSound->play();
     invaders[spawnedInvadersArray[index]]->isVisible = 0;
-    destroyBuildings(invaders[spawnedInvadersArray[index]]->x, AVAILABLE_LETTERS[invaders[spawnedInvadersArray[index]]->letterIndex].length);
+
+    if (!invaders[spawnedInvadersArray[index]]->showBullet)
+    {
+        game->collisionSound->play();
+        destroyBuildings(invaders[spawnedInvadersArray[index]]->x, AVAILABLE_LETTERS[invaders[spawnedInvadersArray[index]]->letterIndex].length);
+    }
+
     for(int xx = index; xx < spawnedInvadersCount; xx++)
     {
         spawnedInvadersArray[xx] = spawnedInvadersArray[xx + 1];
@@ -278,21 +289,18 @@ void GameStage::reAllignInvaders(int index)
 
 void GameStage::drawInvaders()
 {
-    int reAllign = 0;
     int indexToReAllign = -1;
     for(int xx = 0; xx < spawnedInvadersCount; xx++)
     {
-
-        if (invaders[spawnedInvadersArray[xx]]->y >= BUILDING_START_Y)
+        if ((invaders[spawnedInvadersArray[xx]]->y >= BUILDING_START_Y) || (invaders[spawnedInvadersArray[xx]]->y >= invaders[spawnedInvadersArray[xx]]->bulletY))
         {
            indexToReAllign = xx;
-           reAllign = 1;
            continue;
         }
         invaders[spawnedInvadersArray[xx]]->draw();
     }
 
-    if (reAllign)
+    if (indexToReAllign >= 0)
     {
         reAllignInvaders(indexToReAllign);
     }
