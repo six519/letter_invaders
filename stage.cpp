@@ -227,6 +227,7 @@ void GameStage::spawnInvader()
 
             if (!invaders[letterIndex]->isVisible)
             {
+                invaders[letterIndex]->bulletY = BUILDING_START_Y - X_PADDING;
                 invaders[letterIndex]->selectedCount = 0;
                 invaders[letterIndex]->isVisible = 1;
                 invaders[letterIndex]->x = reduceValue(letterIndex, game->getRandomNumber(0, MAX_BUILDING - 1));

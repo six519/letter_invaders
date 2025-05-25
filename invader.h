@@ -8,6 +8,7 @@
 #define INVADER_SPEED 10
 #define INVADER_DEFAULT_Y 23
 #define INVADER_MOVE_TRIGGER 3
+#define BULLET_CHAR 24
 
 struct Letter {
     char chars[LETTER_MAX_LENGTH];
@@ -85,6 +86,7 @@ class Invader
         Invader(int letterIndex);
         int x;
         int y;
+        int bulletY;
         int letterIndex;
         int isVisible;
         int selectedCount;
