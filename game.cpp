@@ -14,6 +14,8 @@ Game::Game()
     startSound = new Sound(INTRO_SOUND, 1, INTRO_SOUND_LENGTH);
     // collision sound
     collisionSound = new Sound(COLLISION_SOUND, 0, COLLISION_SOUND_LENGTH);
+    // wrong sound
+    wrongSound = new Sound(WRONG_SOUND, 0, WRONG_SOUND_LENGTH);
 
     int counter = 0;
     for(int xx = 0; xx < MAX_BUILDING; xx++)

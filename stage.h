@@ -60,6 +60,7 @@ class GameStage: public Stage
         int spawnedInvadersCount;
         int spawnedInvadersArray[MAX_SPAWNED_INVADERS];
         int retry;
+        int selectedIndex;
 };
 
 #endif

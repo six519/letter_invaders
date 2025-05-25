@@ -15,15 +15,27 @@
 #define F5 698
 #define G5 784
 #define GB4 370
+#define GS4 208
+#define GS5 831
+#define GS6 1661
+#define GS7 3322
 
 #define INTRO_SOUND_LENGTH 73
 #define COLLISION_SOUND_LENGTH 4
+#define WRONG_SOUND_LENGTH 2
 
 static int COLLISION_SOUND[COLLISION_SOUND_LENGTH] = {
     G3,
     G4,
     G5,
     G6,
+};
+
+static int WRONG_SOUND[WRONG_SOUND_LENGTH] = {
+    //GS4,
+    GS5,
+    GS6,
+    //GS7,
 };
 
 static int INTRO_SOUND[INTRO_SOUND_LENGTH] = {

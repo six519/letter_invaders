@@ -14,6 +14,7 @@ void Stage::run()
     draw();
     game->startSound->process();
     game->collisionSound->process();
+    game->wrongSound->process();
 }
 
 void TitleStage::handleKeys()
@@ -161,6 +162,46 @@ void GameStage::handleKeys()
             // exit the game temporarily
             // go to end score stage permanently
             game->gameEnd = 1;
+            return;
+        }
+
+        if (selectedIndex < 0)
+        {
+            // no selected invader
+            // check first letter from invaders
+            for (int xx = 0; xx < spawnedInvadersCount; xx++)
+            {
+                if (
+                    (AVAILABLE_LETTERS[spawnedInvadersArray[xx]].chars[0] == ch) && 
+                    (invaders[spawnedInvadersArray[xx]]->selectedCount != AVAILABLE_LETTERS[spawnedInvadersArray[xx]].length))
+                {
+                    invaders[spawnedInvadersArray[xx]]->selectedCount += 1;
+
+                    if (AVAILABLE_LETTERS[spawnedInvadersArray[xx]].length > 1)
+                    {
+                        selectedIndex = spawnedInvadersArray[xx];
+                    }
+                    break;
+                }
+            }
+
+            return;
+        }
+
+        // with selected invader
+        if (AVAILABLE_LETTERS[selectedIndex].chars[invaders[selectedIndex]->selectedCount] == ch)
+        {
+            invaders[selectedIndex]->selectedCount += 1;
+            if (invaders[selectedIndex]->selectedCount == AVAILABLE_LETTERS[selectedIndex].length)
+            {
+                selectedIndex = -1;
+            }            
+        }
+        else
+        {
+            invaders[selectedIndex]->selectedCount = 0;
+            selectedIndex = -1;
+            game->wrongSound->play();
         }
     }
 }
@@ -186,6 +227,7 @@ void GameStage::spawnInvader()
 
             if (!invaders[letterIndex]->isVisible)
             {
+                invaders[letterIndex]->selectedCount = 0;
                 invaders[letterIndex]->isVisible = 1;
                 invaders[letterIndex]->x = reduceValue(letterIndex, game->getRandomNumber(0, MAX_BUILDING - 1));
                 invaders[letterIndex]->y = INVADER_DEFAULT_Y;
@@ -218,6 +260,11 @@ void GameStage::destroyBuildings(int invaderX, int lettersCount)
 
 void GameStage::reAllignInvaders(int index)
 {
+    if (spawnedInvadersArray[index] == selectedIndex)
+    {
+        selectedIndex = -1;
+    }
+
     game->collisionSound->play();
     invaders[spawnedInvadersArray[index]]->isVisible = 0;
     destroyBuildings(invaders[spawnedInvadersArray[index]]->x, AVAILABLE_LETTERS[invaders[spawnedInvadersArray[index]]->letterIndex].length);
@@ -266,7 +313,7 @@ void GameStage::draw()
 }
 
 GameStage::GameStage(Game *gm) 
-    : Stage(gm), spawnTime(0), spawnedInvadersCount(0), retry(0)
+    : Stage(gm), spawnTime(0), spawnedInvadersCount(0), retry(0), selectedIndex(-1)
 {
     for(int xx = 0; xx < AVAILABLE_LETTERS_COUNT; xx++)
     {

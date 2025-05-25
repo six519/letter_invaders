@@ -38,6 +38,7 @@ class Game
         Building *buildings[MAX_BUILDING];
         Sound *startSound;
         Sound *collisionSound;
+        Sound *wrongSound;
         int selectedOption;
         int gameEnd;
         int maxX;
