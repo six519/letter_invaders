@@ -109,11 +109,7 @@ void IntroStage::handleKeys()
 
 void IntroStage::draw()
 {
-    char roundStr[50] = "Round ";
-    char buffer[50];
-    strcat(roundStr, itoa(game->round, buffer, 10));
-
-    game->drawHeader(roundStr);
+    game->drawHeader("");
     game->drawScore();
     
     setcolor(WHITE);
@@ -144,7 +140,7 @@ void IntroStage::draw()
     outtextxy(100, 206, "letter adds 20 more, the third letter 30 more, etc. Each");
     outtextxy(100, 218, "miss deducts 10 points.");
 
-    outtextxy(300, 242, "..Press Enter to begin Round 1.");
+    outtextxy(300, 242, "..Press Enter to begin game.");
 
     line(85, 262, 560, 262);
     line(85, 264, 560, 264);
@@ -313,11 +309,7 @@ void GameStage::drawInvaders()
 
 void GameStage::draw()
 {
-    char roundStr[50] = "Round ";
-    char buffer[50];
-    strcat(roundStr, itoa(game->round, buffer, 10));
-
-    game->drawHeader(roundStr);
+    game->drawHeader("");
     game->drawScore();
 
     spawnInvader();

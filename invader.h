@@ -3,7 +3,7 @@
 #include <graphics.h>
 #include "building.h"
 
-#define AVAILABLE_LETTERS_COUNT 85
+#define AVAILABLE_LETTERS_COUNT 100
 #define LETTER_MAX_LENGTH 10
 #define INVADER_SPEED 10
 #define INVADER_DEFAULT_Y 23
@@ -75,6 +75,21 @@ static struct Letter AVAILABLE_LETTERS[AVAILABLE_LETTERS_COUNT] = {
     { "Jaffa", 5 },
     { "Dada", 4 },
     { "Add", 3 },
+    { "apple", 5 },
+    { "rhythm", 6 },
+    { "jungle", 6 },
+    { "swift", 5 },
+    { "blanket", 7 },
+    { "oxygen", 6 },
+    { "harmony", 7 },
+    { "crisp", 5 },
+    { "volcano", 7 },
+    { "lantern", 7 },
+    { "zigzag", 6},
+    { "whisper", 7 },
+    { "galaxy", 6 },
+    { "breeze", 6 },
+    { "cupboard", 8 },
 };
 
 class Invader 
