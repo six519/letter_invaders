@@ -204,6 +204,7 @@ void GameStage::handleKeys()
             invaders[selectedIndex]->selectedCount = 0;
             selectedIndex = -1;
             game->wrongSound->play();
+            game->score -= SCORE_MULTIPLIER;
         }
     }
 }
@@ -275,10 +276,12 @@ void GameStage::reAllignInvaders(int index)
     {
         game->collisionSound->play();
         destroyBuildings(invaders[spawnedInvadersArray[index]]->x, AVAILABLE_LETTERS[invaders[spawnedInvadersArray[index]]->letterIndex].length);
+        game->score -= SCORE_MULTIPLIER;
     }
     else
     {
         game->bangSound->play();
+        game->score += SCORE_MULTIPLIER * AVAILABLE_LETTERS[invaders[spawnedInvadersArray[index]]->letterIndex].length;
     }
 
     for(int xx = index; xx < spawnedInvadersCount; xx++)

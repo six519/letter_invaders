@@ -12,6 +12,7 @@
 #define BGI_PATH "C:\\TC\\BGI"
 #define GAME_DELAY 9
 #define GAME_TITLE "Letter Invaders 2025"
+#define SCORE_MULTIPLIER 10
 
 #define ESC_KEY 27
 #define TAB_KEY 9
