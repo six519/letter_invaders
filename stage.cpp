@@ -135,10 +135,10 @@ void IntroStage::draw()
     line(85, 170, 85, 264);
     line(560, 170, 560, 264);
 
-    outtextxy(100, 182, "You score points for each word correctly typed. The");
-    outtextxy(100, 194, "first letter of a word is worth 10 points, the second");
-    outtextxy(100, 206, "letter adds 20 more, the third letter 30 more, etc. Each");
-    outtextxy(100, 218, "miss deducts 10 points.");
+    outtextxy(100, 182, "You score points for each word correctly typed.");
+    //outtextxy(100, 194, "first letter of a word is worth 10 points, the second");
+    //outtextxy(100, 206, "letter adds 20 more, the third letter 30 more, etc. Each");
+    //outtextxy(100, 218, "miss deducts 10 points.");
 
     outtextxy(300, 242, "..Press Enter to begin game.");
 
