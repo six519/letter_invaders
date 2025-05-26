@@ -50,9 +50,10 @@ void Invader::draw()
     if (showBullet)
     {
         // draw bullet
+        int centeredX = this->x + ((AVAILABLE_LETTERS[letterIndex].length * X_PADDING) - X_PADDING) / 2;
         setcolor(LIGHTRED);
         char c[2] = { (char)BULLET_CHAR, '\0' };
-        outtextxy(this->x, bulletY, c);
+        outtextxy(centeredX, bulletY, c);
         bulletY -= INVADER_SPEED + 5;
     }
 }
