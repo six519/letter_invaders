@@ -38,6 +38,7 @@ class Game
         Sound *startSound;
         Sound *collisionSound;
         Sound *wrongSound;
+        Sound *bangSound;
         int selectedOption;
         int gameEnd;
         int maxX;

@@ -23,6 +23,7 @@
 #define INTRO_SOUND_LENGTH 73
 #define COLLISION_SOUND_LENGTH 4
 #define WRONG_SOUND_LENGTH 2
+#define BANG_SOUND_LENGTH 3
 
 static int COLLISION_SOUND[COLLISION_SOUND_LENGTH] = {
     G3,
@@ -32,10 +33,14 @@ static int COLLISION_SOUND[COLLISION_SOUND_LENGTH] = {
 };
 
 static int WRONG_SOUND[WRONG_SOUND_LENGTH] = {
-    //GS4,
     GS5,
     GS6,
-    //GS7,
+};
+
+static int BANG_SOUND[BANG_SOUND_LENGTH] = {
+    GS7,
+    GS4,
+    B4,
 };
 
 static int INTRO_SOUND[INTRO_SOUND_LENGTH] = {

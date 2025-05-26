@@ -15,6 +15,7 @@ void Stage::run()
     game->startSound->process();
     game->collisionSound->process();
     game->wrongSound->process();
+    game->bangSound->process();
 }
 
 void TitleStage::handleKeys()
@@ -278,6 +279,10 @@ void GameStage::reAllignInvaders(int index)
     {
         game->collisionSound->play();
         destroyBuildings(invaders[spawnedInvadersArray[index]]->x, AVAILABLE_LETTERS[invaders[spawnedInvadersArray[index]]->letterIndex].length);
+    }
+    else
+    {
+        game->bangSound->play();
     }
 
     for(int xx = index; xx < spawnedInvadersCount; xx++)
